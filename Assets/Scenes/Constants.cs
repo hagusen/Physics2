@@ -5,6 +5,6 @@ using UnityEngine;
 public class Constants
 {
     public const float G = .00000000006674f;
-    public const float STEPVALUE = 0.2f;
+    public const float STEPVALUE = 0.02f;
 
 }

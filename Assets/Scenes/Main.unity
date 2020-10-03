@@ -213,7 +213,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689928140}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 384, y: 0, z: 10}
+  m_LocalPosition: {x: 38.4, y: 0, z: 10}
   m_LocalScale: {x: 1.737, y: 1.737, z: 1.737}
   m_Children: []
   m_Father: {fileID: 0}
@@ -234,7 +234,8 @@ MonoBehaviour:
   mass: 54991.527
   radius: 1.737
   density: 3.34
-  curVelocity: {x: 0, y: 0, z: 10}
+  curVelocity: {x: 0, y: 0, z: 8.823628}
+  orbitalSpeed: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,6 +471,7 @@ GameObject:
   - component: {fileID: 1841044122}
   - component: {fileID: 1841044121}
   - component: {fileID: 1841044125}
+  - component: {fileID: 1841044126}
   m_Layer: 0
   m_Name: Earth
   m_TagString: Untagged
@@ -486,7 +488,7 @@ SphereCollider:
   m_GameObject: {fileID: 1841044120}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -497,7 +499,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1841044120}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -547,7 +549,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1841044120}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 6.371, y: 6.371, z: 6.371}
   m_Children: []
   m_Father: {fileID: 0}
@@ -569,3 +571,21 @@ MonoBehaviour:
   radius: 6.371
   density: 5.514
   curVelocity: {x: 0, y: 0, z: 0}
+  orbitalSpeed: 0
+--- !u!114 &1841044126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841044120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0d6ef4c38e817042828112e741c53df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resolution: 4
+  size: {x: 0, y: 0, z: 0}
+  particleSystems: []
+  psPrefab: {fileID: 3279441661091980015, guid: d8c9055d8dfec0f4a810c56ff8490bae, type: 3}
+  points: []

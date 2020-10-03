@@ -7,13 +7,19 @@ public class Controller : MonoBehaviour
 
     public Planet[] planets;
     float physicsUpdateTimer = 0;
-
     public float timescale = 1;
 
-    // Start is called before the first frame update
+
+    //Other
+    public ParticleObject[] pObjs;
+
+
     void Start()
     {
-        
+        pObjs = new ParticleObject[planets.Length];
+        for (int i = 0; i < planets.Length; i++) {
+            pObjs[i] = planets[i].GetComponent<ParticleObject>();
+        }
     }
 
     // Update is called once per frame
@@ -37,6 +43,11 @@ public class Controller : MonoBehaviour
             foreach(var planet in planets) {
 
                 planet.UpdatePositon(Constants.STEPVALUE);
+            }
+
+
+            foreach (var obj in pObjs) {
+                obj.CalculateCollisions(planets, Constants.STEPVALUE);
             }
 
 
