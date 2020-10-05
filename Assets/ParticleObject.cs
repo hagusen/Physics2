@@ -101,7 +101,7 @@ public class ParticleObject : MonoBehaviour
         foreach (var other in planets) {
             if (other.transform != transform) {
 
-                Debug.LogWarning(gameObject.name + "332" + other.name);
+                //Debug.LogWarning(gameObject.name + "332" + other.name);
 
                 for (int i = 0; i < particleSystems.Count; i++) {
 
