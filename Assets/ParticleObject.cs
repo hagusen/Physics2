@@ -5,6 +5,9 @@ using UnityEngine;
 public class ParticleObject : MonoBehaviour
 {
 
+    //inte kommenterad men detta fil har inget med uppgiften att göra bara lite roligt  
+
+
     [Min(float.Epsilon)]
     public float resolution = 2;
     public Vector3 size;

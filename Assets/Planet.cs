@@ -7,7 +7,8 @@ public class Planet : MonoBehaviour
 
 
     // We scale down the radius of the planets by 10^6
-    // Then we can calculate the new mass with this thing: (4/3)*("insert group name")* radius^3 * density  
+    // Then we can calculate the new mass with this thing: (4/3)*("insert group name")* radius^3 * density
+    // based on the density of the planet
 
 
 
