@@ -69,18 +69,16 @@ public class Controller : MonoBehaviour
             physicsUpdateTimer -= Constants.STEPVALUE; // :/
 
             if (gravityToggle) {
-
                 // Calculate the force for all planets (moon and earth)
                 foreach (var planet in planets) {
 
                     planet.CalculateForce(planets, Constants.STEPVALUE);
                 }
+            }
+            // Apply the force for all planets (moon and earth)
+            foreach (var planet in planets) {
 
-                // Apply the force for all planets (moon and earth)
-                foreach (var planet in planets) {
-
-                    planet.UpdatePositon(Constants.STEPVALUE);
-                }
+                planet.UpdatePositon(Constants.STEPVALUE);
             }
 
             //Other
