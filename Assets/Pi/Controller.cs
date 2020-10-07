@@ -33,35 +33,17 @@ public class Controller : MonoBehaviour
         density = planets[0].density;
     }
 
-    [System.Obsolete]
+
     void Update() {
 
+        // Check the controls 
+        Controls();
 
-        // Turn off gravity
-        if (Input.GetKeyDown(KeyCode.Space))
-            gravityToggle = !gravityToggle;
+        // Update Physics
+        UpdatePhysics();
+    }
 
-        //Mult gravity
-        if (Input.GetKeyDown(KeyCode.J)) 
-            gravityMultiplier *= 2;
-
-        //Divide gravity
-        if (Input.GetKeyDown(KeyCode.H)) 
-            gravityMultiplier /= 2;
-
-        //Update density
-        planets[0].SetDensity(density * gravityMultiplier);
-
-        //Reload Scene
-        if (Input.GetKeyDown(KeyCode.T))
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
-        // Turn off the program lul (Will crash unity also)
-        if (Input.GetKey(KeyCode.P) && Input.GetKey(KeyCode.O)&& Input.GetKey(KeyCode.I))
-            Application.ForceCrash(0);
-
-        //Change TimeScale in editor
-        Time.timeScale = timescale;
+    private void UpdatePhysics() {
 
         //Fixed Physics update timer
         physicsUpdateTimer += Time.deltaTime;
@@ -83,11 +65,39 @@ public class Controller : MonoBehaviour
 
             //Other
             // Calculate the collisions for the particles
-            foreach (var obj in pObjs) {
-                obj.CalculateCollisions(planets, Constants.STEPVALUE);
-            }
+            pObjs[0].CalculateCollisions(planets, Constants.STEPVALUE); // only for the earth
+
         }
     }
+
+    private void Controls() {
+        // Turn off gravity
+        if (Input.GetKeyDown(KeyCode.Space))
+            gravityToggle = !gravityToggle;
+
+        //Mult gravity
+        if (Input.GetKeyDown(KeyCode.J))
+            gravityMultiplier *= 2;
+
+        //Divide gravity
+        if (Input.GetKeyDown(KeyCode.H))
+            gravityMultiplier /= 2;
+
+        //Update density
+        planets[0].SetDensity(density * gravityMultiplier);
+
+        //Reload Scene
+        if (Input.GetKeyDown(KeyCode.T))
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // Turn off the program lul (Will crash unity also)
+        if (Input.GetKey(KeyCode.P) && Input.GetKey(KeyCode.O) && Input.GetKey(KeyCode.I))
+            Application.ForceCrash(0);
+
+        //Change TimeScale in editor
+        Time.timeScale = timescale;
+    }
+
+
 
     [Header("Calculations")]
     public float orbitalVelocity;
@@ -103,9 +113,6 @@ public class Controller : MonoBehaviour
         //http://www.phys.ufl.edu/courses/phy2048/archives/fall06/lectures/11-08EscapeVelocity.pdf
         orbitalVelocity = Mathf.Sqrt((Constants.G * planets[0].mass * 10000000) / Mathf.Sqrt(distSquared));
         orbitalVelocity1 = Mathf.Sqrt((Constants.G * planets[1].mass * 10000000) / Mathf.Sqrt(distSquared));
-
-
-
 
     }
 

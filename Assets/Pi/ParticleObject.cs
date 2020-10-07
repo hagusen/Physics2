@@ -117,7 +117,7 @@ public class ParticleObject : MonoBehaviour
                         //Debug.Log(dist+ gameObject.name);
                         if (0 > dist){
 
-                            particles[k].velocity = Vector3.Lerp(other.curVelocity.normalized, -other.curVelocity.normalized, Random.value) + new Vector3(Random.value, Random.value, Random.value) * (Random.value - .5f);
+                            particles[k].velocity = Vector3.Lerp(other.curVelocity.normalized, -other.curVelocity.normalized, Random.value); //+ new Vector3(Random.value, Random.value, Random.value) * (Random.value - .5f);
 
 
                         }

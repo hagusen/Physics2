@@ -230,7 +230,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689928140}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -309,12 +309,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 689928140}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0d6ef4c38e817042828112e741c53df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resolution: 5
+  resolution: 6
   size: {x: 0, y: 0, z: 0}
   particleSystems: []
   psPrefab: {fileID: 3279441661091980015, guid: d8c9055d8dfec0f4a810c56ff8490bae, type: 3}
