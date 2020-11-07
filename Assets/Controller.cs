@@ -84,8 +84,4 @@ public class Controller : MonoBehaviour
         // stäng av månens velocity?
         // öka gravitions kraften?
     }
-
-
-
-
 }
